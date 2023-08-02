@@ -34,7 +34,7 @@ certutil -urlcache -split -f "https://github.com/falconx1/windows-config/raw/mai
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/changeContrast.bat" "%USERPROFILE%\Desktop\changeContrast.bat"
 ::Enable GuestControl
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v LimitBlankPasswordUse /t REG_DWORD /d 0 /f
-::Download Schedule Task Init
+::Download File Dolphin
 $zipFilePath = "https://drive.google.com/file/d/1h_hZ-N7su1XsLpYuBz3LCS1tGThfj1C3/view?usp=sharing"
 $desktopPath = [Environment]::GetFolderPath("Desktop")
 certutil -urlcache -split -f $zipFilePath "$desktopPath\0.zip"
