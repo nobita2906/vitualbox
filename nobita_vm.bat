@@ -45,6 +45,8 @@ certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/anydesk-config/main/setupAnydesk.bat" "C:\Users\Public\Downloads\setupAnydesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\setupAnydesk.bat" && del /F /Q "C:\Users\Public\Downloads\setupAnydesk.bat"
 ::remove Window Defender
 certutil -urlcache -split -f "https://github.com/ionuttbara/windows-defender-remover/releases/download/release_def_12_5_0/DefenderRemover.exe" "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe" && cmd.exe /c "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe /Y" && del /F /Q "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe"
+::Open proxy
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable /t REG_DWORD /d 1 /f
 ::Unpin Microsoft Store
 powershell -command "((New-Object -Com Shell.Application).Namespace('shell:::{4234d49b-0245-4df3-b780-3893943456e1}').Items() | ?{$_.Name -eq 'Microsoft Store'}).Verbs() | ?{$_.Name.replace('&','') -match 'Unpin from taskbar'} | %{$_.DoIt()}"
 ::Unpin Email Icon
