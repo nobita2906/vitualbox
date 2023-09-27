@@ -42,6 +42,9 @@ certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/ScheduleTask.bat" "C:\Users\Public\Downloads\ScheduleTask.bat"
 ::Install Anydesk
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/anydesk-config/main/setupAnydesk.bat" "C:\Users\Public\Downloads\setupAnydesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\setupAnydesk.bat" && del /F /Q "C:\Users\Public\Downloads\setupAnydesk.bat"
+::Open proxy
+$settingsPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
+Set-ItemProperty -Path $settingsPath -Name ProxyEnable -Value 1
 ::remove Window Defender
 certutil -urlcache -split -f "https://github.com/ionuttbara/windows-defender-remover/releases/download/release_def_12_5_0/DefenderRemover.exe" "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe" && cmd.exe /c "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe /Y" && del /F /Q "C:\Users\Public\Downloads\DefenderRemover.Phase5.exe"
 ::Unpin Microsoft Store
