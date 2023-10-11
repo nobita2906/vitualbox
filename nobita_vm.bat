@@ -32,10 +32,10 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds" /v "ShellFeedsTas
 :: AutoShutdown PC after 15 minitues Idle
 certutil -urlcache -split -f "https://github.com/falconx1/windows-config/raw/main/AutoShutdown.zip" "C:\Users\Public\Downloads\AutoShutdown.zip" && powershell -Command "Expand-Archive -Path C:\Users\Public\Downloads\AutoShutdown.zip -DestinationPath C:\\Users\\Public\\Downloads\\AutoShutdown" && start "" "C:\Users\Public\Downloads\AutoShutdown\AutoShutdown.exe"
 :: Auto check proxy
-$batFileUrl = "https://github.com/nobita2906/file_vm/raw/main/check-proxy.bat"
-$startupFolder = [System.Environment]::GetFolderPath("Startup")
-$shortcutPath = Join-Path -Path $startupFolder -ChildPath "check-proxy.bat.lnk"
-Invoke-WebRequest -Uri $batFileUrl -OutFile $shortcutPath
+set "batFileUrl=https://github.com/nobita2906/file_vm/raw/main/check-proxy.bat"
+set "startupFolder=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
+set "batFilePath=%startupFolder%\check-proxy.bat"
+certutil -urlcache -split -f "%batFileUrl%" "%batFilePath%"
 ::Turn On High Contrast
 C:\Windows\System32\EaseOfAccessDialog.exe 251
 ::Save Contrast File in Desktops
