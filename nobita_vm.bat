@@ -36,8 +36,6 @@ set "batFileUrl=https://github.com/nobita2906/file_vm/raw/main/check-proxy.bat"
 set "startupFolder=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 set "batFilePath=%startupFolder%\check-proxy.bat"
 certutil -urlcache -split -f "%batFileUrl%" "%batFilePath%"
-::Turn On High Contrast
-C:\Windows\System32\EaseOfAccessDialog.exe 251
 ::Save Contrast File in Desktops
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/changeContrast.bat" "%USERPROFILE%\Desktop\changeContrast.bat"
 ::Enable GuestControl
