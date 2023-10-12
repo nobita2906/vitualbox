@@ -36,8 +36,12 @@ set "batFileUrl=https://github.com/nobita2906/file_vm/raw/main/check-proxy.bat"
 set "startupFolder=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 set "batFilePath=%startupFolder%\check-proxy.bat"
 certutil -urlcache -split -f "%batFileUrl%" "%batFilePath%"
+::Save checkproxy-bat in Desktops
+certutil -urlcache -split -f "https://github.com/nobita2906/file_vm/raw/main/check-proxy.bat" "%USERPROFILE%\Desktop\changeContrast.bat"
 ::Save Contrast File in Desktops
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/changeContrast.bat" "%USERPROFILE%\Desktop\changeContrast.bat"
+::Save Anydesk File in Desktops
+certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/anydesk-config/main/setupAnydesk.bat" "%USERPROFILE%\Desktop\changeContrast.bat"
 ::Enable GuestControl
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v LimitBlankPasswordUse /t REG_DWORD /d 0 /f
 ::Hide Folder AD
