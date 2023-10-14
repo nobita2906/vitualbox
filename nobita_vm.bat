@@ -37,7 +37,9 @@ set "startupFolder=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 set "batFilePath=%startupFolder%\check-proxy.bat"
 certutil -urlcache -split -f "%batFileUrl%" "%batFilePath%"
 ::Save checkproxy-bat in Desktops
-certutil -urlcache -split -f "https://github.com/nobita2906/file_vm/raw/main/check-proxy.bat" "%USERPROFILE%\Desktop\open-proxy.bat"
+certutil -urlcache -split -f "https://github.com/nobita2906/file_vm/raw/main/check-proxy.bat" "%USERPROFILE%\Desktop\OpenProxy.bat"
+::Save changeproxy-bat in Desktops
+certutil -urlcache -split -f https://raw.githubusercontent.com/nobita2906/vitualbox/main/changeproxy.ps1" "%USERPROFILE%\Desktop\ChangeProxy.bat"
 ::Save Contrast File in Desktops
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/vitualbox/main/spam.ps1" "%USERPROFILE%\Desktop\chrome-link.ps1"
 ::Save Anydesk File in Desktops
