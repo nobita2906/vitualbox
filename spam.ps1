@@ -5,7 +5,6 @@ $websites = @(
     "https://www.aliexpress.com/",
     "https://www.cnn.com/",
     "https://www.walmart.com/",
-    "https://www.etsy.com/",
     "https://www.wish.com/",
     "https://www.target.com/",
     "https://www.newegg.com/",
