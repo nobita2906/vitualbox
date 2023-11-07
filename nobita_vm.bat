@@ -31,11 +31,8 @@ reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v "On
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds" /v "ShellFeedsTaskbarViewMode" /t REG_DWORD /d "2" /f
 :: AutoShutdown PC after 15 minitues Idle
 certutil -urlcache -split -f "https://github.com/falconx1/windows-config/raw/main/AutoShutdown.zip" "C:\Users\Public\Downloads\AutoShutdown.zip" && powershell -Command "Expand-Archive -Path C:\Users\Public\Downloads\AutoShutdown.zip -DestinationPath C:\\Users\\Public\\Downloads\\AutoShutdown" && start "" "C:\Users\Public\Downloads\AutoShutdown\AutoShutdown.exe"
-:: Auto check proxy
-set "batFileUrl=https://github.com/nobita2906/file_vm/raw/main/check-proxy.bat"
-set "startupFolder=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
-set "batFilePath=%startupFolder%\check-proxy.bat"
-certutil -urlcache -split -f "%batFileUrl%" "%batFilePath%"
+:: Save check-proxy in Desktops
+certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/vitualbox/main/startup-check-proxy.bat" "%USERPROFILE%\Desktop\StartupCheckProxy.bat"
 ::Save checkproxy-bat in Desktops
 certutil -urlcache -split -f "https://github.com/nobita2906/file_vm/raw/main/check-proxy.bat" "%USERPROFILE%\Desktop\OpenProxy.bat"
 ::Save changeproxy-bat in Desktops
