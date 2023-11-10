@@ -33,6 +33,8 @@ $websites = @(
 # Trang web cố định
 $fixed_websites = @(
     "https://chrome.google.com/webstore/detail/webrtc-leak-prevent/eiadekoaikejlgdbkbdfeijglgfdalml",
+    "https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif",
+    "http://www.pinesync.com/",
     "https://whoer.net",
     "https://pixelscan.net"
 )
