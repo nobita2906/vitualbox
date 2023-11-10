@@ -43,6 +43,8 @@ certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/vitua
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/anydesk-config/main/setupAnydesk.bat" "%USERPROFILE%\Desktop\SetupAnydesk.bat"
 ::Save AutoShutdown in Desktops
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/vitualbox/main/AutoShutdown.bat" "%USERPROFILE%\Desktop\AutoShutdown.bat"
+::Save OmegaOptions in Desktops
+certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/vitualbox/main/OmegaOptions.bak" "%USERPROFILE%\Desktop\Omega-proxy-cleverbee-me.bak"
 ::Save SetupDolphin in Desktops
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/vitualbox/main/setup-dolphin.bat" "%USERPROFILE%\Desktop\SetupDolphin.bat"
 ::Enable GuestControl
