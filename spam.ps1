@@ -36,7 +36,9 @@ $fixed_websites = @(
     "https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif",
     "http://www.pinesync.com/",
     "https://whoer.net",
-    "https://pixelscan.net"
+    "https://pixelscan.net",
+    "http://etsy.com",
+    "http://gmail.com"
 )
 
 # Số lượng trang web ngẫu nhiên để mở (từ 2 đến 5)
