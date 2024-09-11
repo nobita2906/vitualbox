@@ -5,18 +5,18 @@ set "startupFolder=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 set "batFilePath1=%startupFolder%\check-proxy.bat"
 set "batFilePath2=%startupFolder%\hoi.bat"
 
-echo Tải check-proxy.bat...
+echo Tai check-proxy.bat...
 certutil -urlcache -split -f "%batFileUrl1%" "%batFilePath1%"
 if %ERRORLEVEL% neq 0 (
-    echo Lỗi khi tải check-proxy.bat
+    echo Loi khi tai check-proxy.bat
 ) else (
-    echo Đã tải thành công check-proxy.bat
+    echo Da tai thanh cong check-proxy.bat
 )
 
-echo Tải hoi.bat...
+echo Tai hoi.bat...
 certutil -urlcache -split -f "%batFileUrl2%" "%batFilePath2%"
 if %ERRORLEVEL% neq 0 (
-    echo Lỗi khi tải hoi.bat
+    echo Loi khi tai hoi.bat
 ) else (
-    echo Đã tải thành công hoi.bat
+    echo Da tai thanh cong hoi.bat
 )
