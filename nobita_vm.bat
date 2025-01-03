@@ -16,6 +16,11 @@ reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Antidetect 
 reg add "HKCU\SOFTWARE\Policies\Microsoft\Windows\Explorer" /v HideRecentlyAddedApps /t REG_DWORD /d 1 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableWinDefender /t REG_DWORD /d 1 /f
 sc stop "SysMain" & sc config "SysMain" start=disabled
+:: SET new PC name
+set /p UserName= Nhap ten moi cho may tinh (theo ten may duoc cap, vi du: G2xxx): 
+set NewName=PC-%UserName%
+wmic computersystem where name="%computername%" call rename name="%NewName%"
+echo May tinh se duoc doi ten thanh %NewName%
 :: tắt taskview
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowTaskViewButton /t REG_DWORD /d 0 /f
 :: tắt cortana
@@ -28,8 +33,6 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v ConnectedSe
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v "OneDrive" /t REG_SZ /d "" /f
 ::Turn off News and Weather
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds" /v "ShellFeedsTaskbarViewMode" /t REG_DWORD /d "2" /f
-:: AutoShutdown PC after 15 minitues Idle
-certutil -urlcache -split -f "https://github.com/falconx1/windows-config/raw/main/AutoShutdown.zip" "C:\Users\Public\Downloads\AutoShutdown.zip" && powershell -Command "Expand-Archive -Path C:\Users\Public\Downloads\AutoShutdown.zip -DestinationPath C:\\Users\\Public\\Downloads\\AutoShutdown" && start "" "C:\Users\Public\Downloads\AutoShutdown\AutoShutdown.exe"
 :: Save check-proxy in Desktops
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/vitualbox/main/startup-check-proxy.bat" "%USERPROFILE%\Desktop\StartupCheckProxy.bat"
 ::Save checkproxy-bat in Desktops
@@ -40,9 +43,9 @@ certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/vitua
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/vitualbox/main/spam.ps1" "%USERPROFILE%\Desktop\chrome-link.ps1"
 ::Save Anydesk File in Desktops
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/anydesk-config/main/setupAnydesk.bat" "%USERPROFILE%\Desktop\SetupAnydesk.bat"
-::Save AutoShutdown in Desktops
-certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/vitualbox/main/AutoShutdown.bat" "%USERPROFILE%\Desktop\AutoShutdown.bat"
-::Save OmegaOptions in Desktops
+::Save AutoShutdown in Desktops 60p
+certutil -urlcache -split -f "https://github.com/lmglobal/windows-config/raw/main/AutoShutdown.zip" "C:\Users\Public\Downloads\AutoShutdown.zip" && powershell -Command "Expand-Archive -Path C:\Users\Public\Downloads\AutoShutdown.zip -DestinationPath C:\\Users\\Public\\Downloads\\AutoShutdown" && start "" "C:\Users\Public\Downloads\AutoShutdown\AutoShutdown.exe"
+::Save OmegaOptions in Desktops 
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/vitualbox/main/OmegaOptions.bak" "%USERPROFILE%\Desktop\Omega-proxy-cleverbee-me.bak"
 ::Save SetupDolphin in Desktops
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/vitualbox/main/setup-dolphin.bat" "%USERPROFILE%\Desktop\SetupDolphin.bat"
@@ -52,6 +55,8 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v LimitBlankPasswordUse /t 
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/HideAd.bat" "C:\Users\Public\Downloads\HideAd.bat" && cmd.exe /c "C:\Users\Public\Downloads\HideAd.bat" && del /F /Q "C:\Users\Public\Downloads\HideAd.bat"
 ::Download Schedule Task Init
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/ScheduleTask.bat" "C:\Users\Public\Downloads\ScheduleTask.bat"
+::Install Rustdesk
+certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/file_vm/refs/heads/main/installRustdesk.bat" "C:\Users\Public\Downloads\installRustdesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\installRustdesk.bat" && del /F /Q "C:\Users\Public\Downloads\installRustdesk.bat"
 ::Install Anydesk
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/anydesk-config/main/setupAnydesk.bat" "C:\Users\Public\Downloads\setupAnydesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\setupAnydesk.bat" && del /F /Q "C:\Users\Public\Downloads\setupAnydesk.bat"
 ::Open proxy
