@@ -18,7 +18,7 @@ echo UAC has been disabled. The system needs to be rebooted to apply changes.
 
 :: SET new PC name
 set /p UserName= Nhap ten moi cho may tinh (theo ten may duoc cap, vi du: G2xxx): 
-set NewName=DESKTOP-%UserName%
+set NewName=PC-%UserName%
 wmic computersystem where name="%computername%" call rename name="%NewName%"
 echo May tinh se duoc doi ten thanh %NewName%
 
