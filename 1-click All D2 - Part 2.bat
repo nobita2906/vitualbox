@@ -31,7 +31,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds" /v ShellFeedsTask
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v LimitBlankPasswordUse /t REG_DWORD /d 0 /f
 
 ::Install Rustdesk
-certutil -urlcache -split -f "https://raw.githubusercontent.com/lmglobal/windows-config/main/installRustdesk.bat" "C:\Users\Public\Downloads\installRustdesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\installRustdesk.bat" && del /F /Q "C:\Users\Public\Downloads\installRustdesk.bat"
+certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/file_vm/refs/heads/main/installRustdesk.bat" "C:\Users\Public\Downloads\installRustdesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\installRustdesk.bat" && del /F /Q "C:\Users\Public\Downloads\installRustdesk.bat"
 
 ::Install Anydesk
 certutil -urlcache -split -f "https://raw.githubusercontent.com/lmglobal/windows-config/main/installAnydesk.bat" "C:\Users\Public\Downloads\installAnydesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\installAnydesk.bat" && del /F /Q "C:\Users\Public\Downloads\installAnydesk.bat"
