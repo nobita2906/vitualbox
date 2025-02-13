@@ -16,11 +16,6 @@ reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Antidetect 
 reg add "HKCU\SOFTWARE\Policies\Microsoft\Windows\Explorer" /v HideRecentlyAddedApps /t REG_DWORD /d 1 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableWinDefender /t REG_DWORD /d 1 /f
 sc stop "SysMain" & sc config "SysMain" start=disabled
-:: SET new PC name
-set /p UserName= Nhap ten moi cho may tinh (theo ten may duoc cap, vi du: G2xxx): 
-set NewName=PC-%UserName%
-wmic computersystem where name="%computername%" call rename name="%NewName%"
-echo May tinh se duoc doi ten thanh %NewName%
 :: tắt taskview
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowTaskViewButton /t REG_DWORD /d 0 /f
 :: tắt cortana
@@ -49,6 +44,7 @@ certutil -urlcache -split -f "https://github.com/lmglobal/windows-config/raw/mai
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/vitualbox/main/OmegaOptions.bak" "%USERPROFILE%\Desktop\Omega-proxy-cleverbee-me.bak"
 ::Save SetupDolphin in Desktops
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/vitualbox/main/setup-dolphin.bat" "%USERPROFILE%\Desktop\SetupDolphin.bat"
+certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/file_vm/refs/heads/main/install-rustdesk.bat" "%USERPROFILE%\Desktop\SetupRustdesk.bat"
 ::Enable GuestControl
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v LimitBlankPasswordUse /t REG_DWORD /d 0 /f
 ::Hide Folder AD
@@ -56,7 +52,7 @@ certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows
 ::Download Schedule Task Init
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/ScheduleTask.bat" "C:\Users\Public\Downloads\ScheduleTask.bat"
 ::Install Rustdesk
-certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/file_vm/refs/heads/main/installRustdesk.bat" "C:\Users\Public\Downloads\installRustdesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\installRustdesk.bat" && del /F /Q "C:\Users\Public\Downloads\installRustdesk.bat"
+certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/file_vm/refs/heads/main/install-rustdesk.bat" "C:\Users\Public\Downloads\installRustdesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\installRustdesk.bat" && del /F /Q "C:\Users\Public\Downloads\installRustdesk.bat"
 ::Install Anydesk
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/anydesk-config/main/setupAnydesk.bat" "C:\Users\Public\Downloads\setupAnydesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\setupAnydesk.bat" && del /F /Q "C:\Users\Public\Downloads\setupAnydesk.bat"
 ::Open proxy
