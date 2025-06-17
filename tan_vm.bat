@@ -48,7 +48,7 @@ certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows
 ::Download Schedule Task Init
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/ScheduleTask.bat" "C:\Users\Public\Downloads\ScheduleTask.bat"
 ::Install Rustdesk
-certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/file_vm/refs/heads/main/install-rustdesk.bat" "C:\Users\Public\Downloads\installRustdesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\installRustdesk.bat" && del /F /Q "C:\Users\Public\Downloads\installRustdesk.bat"
+
 ::Install Anydesk
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/anydesk-config/main/setupAnydesk.bat" "C:\Users\Public\Downloads\setupAnydesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\setupAnydesk.bat" && del /F /Q "C:\Users\Public\Downloads\setupAnydesk.bat"
 ::Open proxy
